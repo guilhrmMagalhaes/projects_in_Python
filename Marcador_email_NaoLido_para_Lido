@@ -1,0 +1,77 @@
+# Importação das bibliotecas necessárias
+import pyautogui
+import time
+
+# Solicita ao usuário que insira seu email, senha e o número aproximado de vezes que o robô deve rodar
+email = input("Digite seu email: ")
+senha = input("Digite sua senha: ")
+vezes = 0
+acho = input("Insira o número aproximado de vezes que o robô deve rodar: ")
+
+# Exibe um alerta antes de iniciar o código
+pyautogui.alert("O código vai iniciar. Tire a mão do mouse e teclado")
+
+# Configura uma pausa de 0.75 segundos entre as operações do PyAutoGUI
+pyautogui.PAUSE = 0.75
+
+# Abre o menu Iniciar do Windows
+pyautogui.press('win')
+
+# Escreve "privativa do Firefox" e pressiona Enter
+pyautogui.write('privativa do Firefox')
+pyautogui.press('enter')
+
+# Abre o navegador e acessa o site do Gmail
+pyautogui.write('mail.google.com/')
+pyautogui.press('enter')
+time.sleep(2)
+
+# Insere o email e pressiona Enter
+pyautogui.write(email)
+pyautogui.press('enter')
+time.sleep(2)
+
+# Insere a senha e pressiona Enter
+pyautogui.write(senha)
+pyautogui.press('enter')
+
+# Realiza uma troca de janela com o atalho Alt + Tab
+pyautogui.hotkey('alt', 'tab')
+
+# Solicita que o usuário faça a verificação de duas etapas
+verificacao = input('Fez a verificação de duas etapas?')
+
+# Continua solicitando a verificação até receber "sim" como resposta
+while verificacao != "sim":
+    verificacao = input('Fez a verificação de duas etapas?')
+
+# Realiza outra troca de janela com o atalho Alt + Tab
+pyautogui.hotkey('alt', 'tab')
+time.sleep(5)
+
+# Inicia o loop para marcar como lido os e-mails não lidos
+while vezes < int(acho):
+    # Move o cursor para as coordenadas (283, 204) e clica
+    pyautogui.moveTo(283, 204)
+    pyautogui.click()
+
+    # Move o cursor para as coordenadas (492, 207) e clica
+    pyautogui.moveTo(492, 207)
+    pyautogui.click()
+
+    # Move o cursor para as coordenadas (283, 204) e clica
+    pyautogui.moveTo(283, 204)
+    pyautogui.click()
+
+    # Move o cursor para as coordenadas (341, 205) e clica
+    pyautogui.moveTo(341, 205)
+    pyautogui.click()
+
+    # Aguarda por 2 segundos
+    time.sleep(2)
+
+    # Incrementa o contador de vezes
+    vezes = vezes + 1
+
+# Exibe um alerta de conclusão
+pyautogui.alert("O código terminou a tarefa. Verifique se todos os e-mails foram lidos")
