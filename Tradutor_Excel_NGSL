@@ -1,0 +1,27 @@
+from googletrans import Translator
+import pandas as pd
+
+Arquivo = 'C:/Users/guilh/OneDrive/Documentos/Documentos Gui/Demandas/Projetos Python/Tradutor/NGSL_1.2_stats.xlsx'
+df = pd.read_excel(Arquivo)
+translator = Translator()
+
+# Lista para armazenar as traduções
+traducoes = []
+i=0
+for linha in df['Lemma']:
+    palavra = str(linha)  
+    try:
+        translation = translator.translate(palavra, dest='pt')
+        i = i+1
+        print(f'A palavra {i} foi traduzida')
+        traducoes.append(translation.text)
+    except Exception as e:
+        print(f"Erro ao traduzir a palavra {palavra}: {e}")
+        traducoes.append(None)  # Pode adicionar None para indicar erro
+
+# Adiciona a lista de traduções como uma nova coluna no DataFrame
+df['Traducao'] = traducoes
+print(df)
+
+# Salva o DataFrame modificado em um novo arquivo Excel
+df.to_excel('C:/Users/guilh/OneDrive/Documentos/Documentos Gui/Demandas/Projetos Python/Tradutor/NGSL_1.2_stats_traduzido.xlsx', index=False)
