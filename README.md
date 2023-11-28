@@ -7,5 +7,5 @@ Welcome to my GitHub repository! This is where I store my small Python projects,
 
 Here's a list of the Python projects and code samples in this repository:
 
-1. [Marcador_email_NaoLido_para_Lido]([link-to-project](https://github.com/guilhrmMagalhaes/projects_in_Python/blob/0ee9bd64fd1f1eb7e6a08f2fa8729005e9026571/Marcador_email_NaoLido_para_Lido)): Este código Python utiliza a biblioteca PyAutoGUI para automatizar ações em um navegador da web (Firefox), com o objetivo de acessar a caixa de entrada do Gmail e marcar como lido os e-mails.
-2. Tradutor_Excel_NGSL: O código traduz as palavras da coluna 'Lemma' do DataFrame de inglês para português, adiciona as traduções como uma nova coluna e salva o DataFrame modificado em um novo arquivo Excel
+1. [Marcador_email_NaoLido_para_Lido]([link-to-project](https://github.com/guilhrmMagalhaes/projects_in_Python/blob/0ee9bd64fd1f1eb7e6a08f2fa8729005e9026571/Marcador_email_NaoLido_para_Lido)): This Python code utilizes the PyAutoGUI library to automate actions in a web browser (Firefox), aiming to access the Gmail inbox and mark emails as read.
+2. Tradutor_Excel_NGSL: The code translates words from the 'Lemma' column of the DataFrame from English to Portuguese, adds the translations as a new column, and saves the modified DataFrame to a new Excel file.
